@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivier Savary Notaire - SCP Hervé Coric & Associés à Montlhéry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth }
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-button { background-image: linear-gradient(to right, #4F46E5 0%, #8B5CF6 51%, #4F46E5 100%); transition: 0.5s; background-size: 200% auto; color: white; border-radius: 0.75rem; padding: 0.75rem 2rem; }
+        .gradient-button:hover { background-position: right center; }
+    </style>
+</head>
+<body x-data="{ open: false }">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#hero" class="text-2xl font-bold text-gray-900">Maître Savary</a>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:space-x-8">
+                    <a href="#hero" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Accueil</a>
+                    <a href="#services" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Services</a>
+                    <a href="#about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Pourquoi nous choisir ?</a>
+                    <a href="#testimonials" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Témoignages</a>
+                    <a href="#contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <!-- Mobile menu button -->
+                    <button @click="open = !open" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div x-show="open" @click.outside="open = false" class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="bg-indigo-50 border-indigo-500 text-indigo-700 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Accueil</a>
+                <a href="#services" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#about" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Pourquoi nous choisir ?</a>
+                <a href="#testimonials" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Témoignages</a>
+                <a href="#contact" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+            <div class="lg:order-1 text-center lg:text-left">
+                <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6" data-aos="fade-right">
+                    Votre Notaire de Confiance à <span class="text-indigo-600">Montlhéry</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8" data-aos="fade-right" data-aos-delay="100">
+                    Maître Olivier Savary et son équipe vous accompagnent avec expertise et écoute pour sécuriser vos projets immobiliers, familiaux, professionnels et patrimoniaux. Bénéficiez d'un conseil juridique clair et personnalisé.
+                </p>
+                <a href="#contact" class="gradient-button inline-block text-lg font-semibold shadow-lg hover:shadow-xl" data-aos="fade-right" data-aos-delay="200">
+                    Prendre Rendez-vous
+                </a>
+            </div>
+            <div class="lg:order-2" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80" alt="Notaire au travail avec des documents" class="rounded-3xl shadow-2xl w-full h-[500px] lg:h-[600px] object-cover object-center">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-12" data-aos="fade-up">
+                Nos Domaines d'Intervention
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Droit immobilier" class="rounded-xl h-48 w-full object-cover mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Droit de l'Immobilier</h3>
+                    <p class="text-gray-600 text-sm">
+                        Accompagnement complet pour vos transactions immobilières : rédaction d'actes authentiques de vente, prêts hypothécaires, baux commerciaux et conseils fiscaux. Nous garantissons la sécurité juridique de vos projets, que vous soyez acquéreur ou vendeur, pour une transaction sereine et conforme à la législation en vigueur.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Droit de la famille" class="rounded-xl h-48 w-full object-cover mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Droit de la Famille</h3>
+                    <p class="text-gray-600 text-sm">
+                        Gestion des successions, donations, testaments, contrats de mariage, PACS et divorces. Nous vous conseillons pour protéger vos proches et organiser la transmission de votre patrimoine. Nous intervenons également dans la protection des majeurs et les partages pour des solutions adaptées à chaque situation familiale.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Droit de l'entreprise" class="rounded-xl h-48 w-full object-cover mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Droit de l'Entreprise & Patrimonial</h3>
+                    <p class="text-gray-600 text-sm">
+                        Accompagnement des chefs d'entreprise pour les cessions de fonds de commerce, la transmission d'entreprises, la constitution et la dissolution de sociétés. En matière de gestion patrimoniale, nous offrons des conseils pour l'optimisation fiscale et l'organisation de votre patrimoine afin d'assurer sa pérennité et sa transmission optimale.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Nous Choisir Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-12" data-aos="fade-up">
+                Pourquoi Choisir l'Étude Savary & Associés ?
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-indigo-600 text-5xl mb-4"><i class="fas fa-balance-scale"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Expertise Reconnue</h3>
+                    <p class="text-gray-600">Forts d'une longue expérience, nous vous assurons un conseil juridique d'excellence, basé sur une connaissance approfondie du droit.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-indigo-600 text-5xl mb-4"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Accompagnement Personnalisé</h3>
+                    <p class="text-gray-600">Chaque dossier est unique. Nous offrons un suivi individuel pour répondre précisément à vos besoins et préoccupations.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-indigo-600 text-5xl mb-4"><i class="fas fa-user-secret"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Confidentialité Garantie</h3>
+                    <p class="text-gray-600">Vos informations et vos projets sont traités avec la plus stricte confidentialité, gage de confiance et de sérénité.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-indigo-600 text-5xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sécurité Juridique</h3>
+                    <p class="text-gray-600">Nous veillons à la conformité et à la sécurité de tous vos actes, protégeant ainsi vos intérêts à chaque étape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section id="testimonials" class="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-12" data-aos="fade-up">
+                Ce que nos clients disent de nous
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Sophie+Dubois&background=random" alt="Avatar Sophie Dubois" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Sophie Dubois</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic text-sm">
+                        "Maître Savary a été d'un soutien précieux lors de l'achat de notre maison. Ses conseils ont été clairs et rassurants, et le suivi du dossier impeccable. Un grand professionnalisme !"
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Marc+Lefevre&background=random" alt="Avatar Marc Lefevre" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Marc Lefevre</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic text-sm">
+                        "Nous avons fait appel à l'étude pour une succession complexe. L'équipe a su nous guider avec humanité et efficacité, en expliquant chaque étape. Une aide précieuse en période difficile."
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Camille+Durand&background=random" alt="Avatar Camille Durand" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Camille Durand</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic text-sm">
+                        "L'accompagnement pour la transmission de mon entreprise a été parfait. Maître Savary a su anticiper les problématiques et proposer des solutions adaptées. Je recommande vivement leurs services."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-12" data-aos="fade-up">
+                Contactez l'Étude
+            </h2>
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Envoyez-nous un message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-3" placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-3" placeholder="Votre email">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-3" placeholder="Votre numéro de téléphone">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Votre message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-3" placeholder="Décrivez votre demande"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full gradient-button text-lg font-semibold shadow-lg hover:shadow-xl">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="space-y-8" data-aos="fade-left">
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Nos Coordonnées</h3>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-map-marker-alt text-indigo-600 mr-3"></i><strong>Adresse :</strong> 57 Route d'Orléans, BP 50115, 91312 Montlhéry Cedex</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-phone-alt text-indigo-600 mr-3"></i><strong>Téléphone :</strong> <a href="tel:0164496600" class="text-indigo-600 hover:underline">01 64 49 66 00</a></p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-fax text-indigo-600 mr-3"></i><strong>Fax :</strong> 01 69 01 07 87</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope text-indigo-600 mr-3"></i><strong>Email :</strong> <a href="mailto:contact@etude57.notaires.fr" class="text-indigo-600 hover:underline">contact@etude57.notaires.fr</a></p>
+                        <p class="text-gray-700"><i class="fas fa-clock text-indigo-600 mr-3"></i><strong>Horaires de réception (sur RDV) :</strong> Lundi - Vendredi : 9h00 - 12h00 et 13h30 - 17h30</p>
+                        <p class="text-gray-700 mt-2"><i class="fas fa-headset text-indigo-600 mr-3"></i><strong>Horaires d'appels :</strong> 10h00 - 12h00 et 14h00 - 17h30 (sauf mercredi après-midi)</p>
+                    </div>
+                    <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.332029762111!2d2.261266076939943!3d48.64333671754044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5d804101e149f%3A0xc3f587d55c707d8e!2s57%20Route%20d'Orl%C3%A9ans%2C%2091310%20Montlh%C3%A9ry!5e0!3m2!1sen!2sfr!4v1701188400000!5m2!1sen!2sfr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Maître Savary</h3>
+                    <p class="text-sm mb-4">
+                        Notaire associé à Montlhéry, nous vous accompagnons dans toutes vos démarches juridiques et patrimoniales avec expertise et rigueur.
+                    </p>
+                    <p class="text-sm">&copy; <span x-text="new Date().getFullYear()"></span> Maître Savary. Tous droits réservés.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Nos Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-white transition-colors">Droit Immobilier</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Droit de la Famille</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Droit de l'Entreprise</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Gestion Patrimoniale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="tel:0164496600" class="hover:text-white transition-colors"><i class="fas fa-phone-alt mr-2"></i>01 64 49 66 00</a></li>
+                        <li><a href="mailto:contact@etude57.notaires.fr" class="hover:text-white transition-colors"><i class="fas fa-envelope mr-2"></i>contact@etude57.notaires.fr</a></li>
+                        <li><p><i class="fas fa-map-marker-alt mr-2"></i>57 Route d'Orléans, 91310 Montlhéry</p></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
